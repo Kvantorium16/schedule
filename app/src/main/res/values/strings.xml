@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Schedule</string>
+
+    <string-array name="directions">
+        <item>Исторические</item>
+        <item>Информационное</item>
+        <item>Инженерное</item>
+        <item>Литературное</item>
+        <item>Дизайнерское</item>
+        <item>Гуманитарное</item>
+    </string-array>
+    <item name="directions" type="id" />
 </resources>
