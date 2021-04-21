@@ -12,11 +12,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val spinner = findViewById<Spinner>(R.id.spinner3);
+        val spinner = findViewById<Spinner>(R.id.directions_spinner);
 
         val adapter : ArrayAdapter<CharSequence> = ArrayAdapter.createFromResource(this, R.array.directions, android.R.layout.simple_spinner_dropdown_item)
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.adapter = adapter;
+
+
 
     }
 }
