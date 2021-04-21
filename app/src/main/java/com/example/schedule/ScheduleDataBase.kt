@@ -40,10 +40,10 @@ class ScheduleDataBase(context: Context) : SQLiteOpenHelper(context, "Schedule",
     }
 
     fun get_group_list(db: SQLiteDatabase){
-        val cursor: Cursor = db.query("Directions", arrayOf("NAME", "DESCRIPTION"),
-            null, null, null, null);
-
+        val cursor: Cursor = db.rawQuery("select class_group from Directions", null);
         val newValues = ContentValues();
+
+
         newValues.put("class_group", );
         newValues.put("direction", );
     }
