@@ -4,15 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/logo_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/aldrich"
+        android:text="@string/logo_name"
+        android:textColor="#534281"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/main_button"
+        android:layout_width="241dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="318dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/chose_btn_name"
+        app:backgroundTint="#A8A6DE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chose_text" />
+
+    <ImageView
+        android:id="@+id/logo_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:contentDescription="@string/description_logo"
+        app:layout_constraintEnd_toStartOf="@+id/logo_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon"
+        tools:srcCompat="@drawable/icon" />
+
+    <Spinner
+        android:id="@+id/directions_spinner"
+        android:layout_width="145dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/custom_spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chose_text" />
+
+    <Spinner
+        android:id="@+id/group_spinner"
+        android:layout_width="145dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/custom_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chose_text" />
+
+    <TextView
+        android:id="@+id/chose_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="@string/chose_text_name"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
