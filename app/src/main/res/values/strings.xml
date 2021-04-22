@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Schedule</string>
+    <string name="logo_name">Your Schedule</string>
+    <string name="description_logo">Описание лого</string>
+    <string name="chose_btn_name">Показать расписание</string>
+    <string name="chose_text_name">Выбрать параметры</string>
+
+    <string-array name="directions">
+        <item>Исторические</item>
+        <item>Информационное</item>
+        <item>Инженерное</item>
+        <item>Литературное</item>
+        <item>Дизайнерское</item>
+        <item>Гуманитарное</item>
+    </string-array>
+    <item name="directions" type="id" />
+
 </resources>
