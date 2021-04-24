@@ -4,6 +4,26 @@
     <string name="description_logo">Описание лого</string>
     <string name="chose_btn_name">Показать расписание</string>
     <string name="chose_text_name">Выбрать параметры</string>
+    <string name="geokvantum_subject">Геоквантум</string>
+    <string name="geokvantum_text">Работа с дистанционным зондированием Земли, оубчение картографии и проектированию виртуальных карт местности.</string>
+    <string name="neirokvantum_subject">НЕЙРОКВАНТУМ</string>
+    <string name="neirokvantum_text">Исследование механизмов работы человеческого мозга и разработка на их основе новых искуственных систем и человеко-машинных интерфейсов.</string>
+    <string name="it_subject">ИТ-КВАНТУМ</string>
+    <string name="it_text">Углубленное изучение программирования, сетевых технологий. Освоение высокоуровневых языков программирования: C++, C#, Java, Arduino, Rasberry Pi и Интернет Вещей (IoT).</string>
+    <string name="kosmo_subject">КОСМОКВАНТУМ</string>
+    <string name="kosmo_text">Изучение физико-математических основ космонавтики, электротехники, радиотехники, электроники и фотоники, конструирование малых искусственных спутников Земли.</string>
+    <string name="laser_subject">ЛАЗЕРКВАНТУМ</string>
+    <string name="laser_text">Изучение современных методов и средств лазерной технологии, работа на лазерном оборудовании.</string>
+    <string name="avto_subject">АВТОКВАНТУМ</string>
+    <string name="avto_text">Проектирование, создание и испытание полностью действующего прототипа беспилотного транспортного средства.</string>
+    <string name="aero_subject">АЭРОКВАНТУМ</string>
+    <string name="aero_text">Способы использования квадрокоптера как для съемки видео с нестандартных ракурсов, так и доставки различных видов груза и даже в военных целях.</string>
+    <string name="robo_subject">РОБОКВАНТУМ</string>
+    <string name="robo_text">Изучение передовых технологий в области электроники, мехатроники и программирования, конструирование и программирование роботов.</string>
+    <string name="hitech_subject">HITECH-ЦЕНТР</string>
+    <string name="hitech_text">HI-TECH цех – лаборатория межквантового взаимодействия в рамках подготовки проектов. В лаборатории работает направление Промдизайн.</string>
+
+
 
     <string-array name="directions">
         <item>Исторические</item>

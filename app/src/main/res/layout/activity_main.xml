@@ -26,12 +26,23 @@
         android:id="@+id/main_button"
         android:layout_width="241dp"
         android:layout_height="64dp"
-        android:layout_marginTop="318dp"
+        android:layout_marginTop="400dp"
         android:background="@drawable/custom_button"
         android:text="@string/chose_btn_name"
         app:backgroundTint="#A8A6DE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chose_text" />
+
+    <Spinner
+        android:id="@+id/directions_spinner"
+        android:layout_width="145dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:layout_marginTop="344dp"
+        android:background="@drawable/custom_spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chose_text" />
 
@@ -48,38 +59,18 @@
         app:srcCompat="@drawable/icon"
         tools:srcCompat="@drawable/icon" />
 
-    <Spinner
-        android:id="@+id/directions_spinner"
-        android:layout_width="145dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="44dp"
-        android:background="@drawable/custom_spinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chose_text" />
-
-    <Spinner
-        android:id="@+id/group_spinner"
-        android:layout_width="145dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/custom_spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chose_text" />
-
     <TextView
         android:id="@+id/chose_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="172dp"
         android:text="@string/chose_text_name"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
