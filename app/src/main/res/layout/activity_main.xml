@@ -61,7 +61,7 @@
         android:layout_height="27dp"
         android:layout_marginStart="132dp"
         android:layout_marginLeft="132dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="344dp"
         android:background="@drawable/custom_spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chose_text" />
@@ -83,7 +83,7 @@
         android:id="@+id/chose_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="172dp"
         android:text="@string/chose_text_name"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -92,4 +92,5 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
