@@ -7,6 +7,26 @@
     android:background="@drawable/back"
     tools:context=".MainActivity">
 
+    <RelativeLayout
+        android:id="@+id/modal_windows"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/chose_text">
+
+        <androidx.viewpager.widget.ViewPager
+            android:foregroundGravity="center"
+            android:id="@+id/viewPager"
+            android:layout_centerInParent="true"
+            android:overScrollMode="never"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.viewpager.widget.ViewPager>
+
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/logo_text"
         android:layout_width="wrap_content"
@@ -26,7 +46,7 @@
         android:id="@+id/main_button"
         android:layout_width="241dp"
         android:layout_height="64dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="392dp"
         android:background="@drawable/custom_button"
         android:text="@string/chose_btn_name"
         app:backgroundTint="#A8A6DE"
