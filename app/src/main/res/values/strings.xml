@@ -22,7 +22,7 @@
     <string name="robo_text">Изучение передовых технологий в области электроники, мехатроники и программирования, конструирование и программирование роботов.</string>
     <string name="hitech_subject">HITECH-ЦЕНТР</string>
     <string name="hitech_text">HI-TECH цех – лаборатория межквантового взаимодействия в рамках подготовки проектов. В лаборатории работает направление Промдизайн.</string>
-
+    <string name="back">К списку направлений</string>
 
 
     <string-array name="directions">
