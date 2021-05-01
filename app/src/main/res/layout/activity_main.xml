@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
+    android:background="@drawable/mainback"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -34,7 +34,7 @@
         android:layout_marginTop="52dp"
         android:fontFamily="@font/aldrich"
         android:text="@string/logo_name"
-        android:textColor="#534281"
+        android:textColor="#424867"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +49,7 @@
         android:layout_marginTop="392dp"
         android:background="@drawable/custom_button"
         android:text="@string/chose_btn_name"
-        app:backgroundTint="#A8A6DE"
+        app:backgroundTint="#252E3C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,10 +59,9 @@
         android:id="@+id/directions_spinner"
         android:layout_width="145dp"
         android:layout_height="27dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
-        android:layout_marginTop="344dp"
+        android:layout_marginTop="340dp"
         android:background="@drawable/custom_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chose_text" />
 
@@ -83,7 +82,7 @@
         android:id="@+id/chose_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="156dp"
         android:text="@string/chose_text_name"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -92,5 +91,4 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
