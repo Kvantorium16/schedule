@@ -1,9 +1,11 @@
 package com.example.schedule
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
 import androidx.viewpager.widget.ViewPager
 import java.util.ArrayList
@@ -17,6 +19,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        // For open second activity
+        val button = findViewById<Button>(R.id.main_button)
+        button.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
+
+        // For spinner
 
          val spinner = findViewById<Spinner>(R.id.directions_spinner);
 
