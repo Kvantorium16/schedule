@@ -24,14 +24,13 @@
     <string name="hitech_text">HI-TECH цех – лаборатория межквантового взаимодействия в рамках подготовки проектов. В лаборатории работает направление Промдизайн.</string>
 
 
-
     <string-array name="directions">
-        <item>Исторические</item>
-        <item>Информационное</item>
-        <item>Инженерное</item>
-        <item>Литературное</item>
-        <item>Дизайнерское</item>
-        <item>Гуманитарное</item>
+        <item>3811</item>
+        <item>121</item>
+        <item>201</item>
+        <item>202</item>
+        <item>122</item>
+        <item>204</item>
     </string-array>
     <item name="directions" type="id" />
 
