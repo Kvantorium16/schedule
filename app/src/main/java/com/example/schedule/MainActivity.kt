@@ -48,23 +48,37 @@ class MainActivity : AppCompatActivity() {
         )
         (models as ArrayList<Model>).add(
                 Model(
-                        R.drawable.robot,
+                        R.drawable.neirokvant,
                         "Нейроквантум",
                         "Исследование механизмов работы человеческого мозга и разработка на их основе новых искуственных систем и человеко-машинных интерфейсов."
                 )
         )
         (models as ArrayList<Model>).add(
                 Model(
-                        R.drawable.robot,
-                        "Космоквантум!",
+                        R.drawable.cosmokvant,
+                        "Космоквантум",
                         "Изучение физико-математических основ космонавтики, электротехники, радиотехники, электроники и фотоники, конструирование малых искусственных спутников Земли."
                 )
         )
         (models as ArrayList<Model>).add(
                 Model(
-                        R.drawable.robot,
+                        R.drawable.airkvant,
                         "Аэроквантум",
                         "Для большинства людей квадрокоптер ― это игрушка, от которой фанатеют, как взрослые, так и дети. Но это не так и мы это докажем! "
+                )
+        )
+        (models as ArrayList<Model>).add(
+                Model(
+                        R.drawable.programkvant,
+                        "IT-квантум",
+                        "Углубленное изучение программирования, сетевых технологий. Освоение высокоуровневых языков программирования: C++, C#, Java, Arduino, Rasberry Pi и Интернет Вещей (IoT)."
+                )
+        )
+        (models as ArrayList<Model>).add(
+                Model(
+                        R.drawable.geokvant,
+                        "Геоквантум",
+                        "Работа с дистанционным зондированием Земли, обучение картографии и проектированию виртуальных карт местности."
                 )
         )
 
