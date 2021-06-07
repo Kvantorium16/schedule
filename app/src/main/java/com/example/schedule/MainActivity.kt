@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val dbHandler: ScheduleDataBase = ScheduleDataBase(this)
 
         // For open second activity
         val button = findViewById<Button>(R.id.main_button)
