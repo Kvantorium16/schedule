@@ -12,7 +12,7 @@ import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
-    var objViewPager: ViewPager? = findViewById(R.id.viewPager);
+    var objViewPager: ViewPager? = null;
     lateinit var cardAdapter : Adapter
     var models: List<Model>? = null
 
@@ -75,6 +75,7 @@ class MainActivity : AppCompatActivity() {
                 )
         )
 
+        objViewPager = findViewById(R.id.viewPager);
         cardAdapter = Adapter(models, this)
         objViewPager?.adapter = cardAdapter
         objViewPager?.setPadding(130, 0, 130, 0)
