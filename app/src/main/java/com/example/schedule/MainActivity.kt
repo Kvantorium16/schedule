@@ -12,7 +12,7 @@ import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
-    var objViewPager: ViewPager? = null
+    var objViewPager: ViewPager? = null;
     lateinit var cardAdapter : Adapter
     var models: List<Model>? = null
 
@@ -20,13 +20,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val dbHandler: ScheduleDataBase = ScheduleDataBase(this)
-
-        // For open second activity
-        val button = findViewById<Button>(R.id.main_button)
-        button.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
-            startActivity(intent)
-        }
 
         // For spinner
 
@@ -82,11 +75,20 @@ class MainActivity : AppCompatActivity() {
                 )
         )
 
+        objViewPager = findViewById(R.id.viewPager);
         cardAdapter = Adapter(models, this)
-
-        objViewPager = findViewById(R.id.viewPager)
         objViewPager?.adapter = cardAdapter
         objViewPager?.setPadding(130, 0, 130, 0)
+
+
+        // For open second activity
+        val button = findViewById<Button>(R.id.main_button)
+        button.setOnClickListener {
+            val selected = objViewPager?.let { it1 -> models?.get(it1.currentItem)?.getTitle() }
+            val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("Directions", selected)
+            startActivity(intent)
+        }
 
     }
 
