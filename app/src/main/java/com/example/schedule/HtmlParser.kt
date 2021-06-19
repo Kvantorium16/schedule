@@ -36,11 +36,12 @@ class HtmlParser{
 
                 val weekdays: Array<String> = (arrayOf("Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"))
 
-                val days = 0
-                for (index in directions) {
+                var days = 0
+                for (direction in directions) {
                     while (days <= 7) {
-                        val day: Elements = doc.select("table[id=\"$weekdays[$days]_$directions[$index]\"]")
+                        val day: Elements = doc.select("table[id=" + weekdays[days] + "_" + direction)
                         db.lesson_add(day.select("p[id=\"group\"]").toString(), weekdays[days], day.select("p[id=\"time\"]").toString())
+                        days += 1
                     }
                 }
 
