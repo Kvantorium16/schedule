@@ -10,23 +10,21 @@ import com.example.schedule.ScheduleDataBase.*
 
 class HtmlParser{
 
-    fun getHtmlFromWeb() {
+    fun getHtmlFromWeb(db : ScheduleDataBase) {
         val groups: ArrayList<String> = arrayListOf()
         val directions: ArrayList<String> = arrayListOf()
-        val ma = MainActivity()
-        val db = ScheduleDataBase(ma)
         Thread{
             try {
                 val doc: Document = Jsoup.connect("https://jjpega.pythonanywhere.com/get").get()
                 val group: Elements = doc.select("p[id=\"group\"]")
                 for (index in group.indices) {
-                    groups.add(group[index].toString())
+                    groups.add(group[index].text())
                 }
                 groups.distinct()
 
                 val direction: Elements = doc.select("td[id=\"direction\"]")
                 for (index in direction.indices) {
-                    directions.add(direction[index].toString())
+                    directions.add(direction[index].text())
                 }
                 directions.distinct()
 
@@ -36,11 +34,11 @@ class HtmlParser{
 
                 val weekdays: Array<String> = (arrayOf("Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"))
 
-                val days = 0
-                for (index in directions) {
-                    while (days <= 7) {
-                        val day: Elements = doc.select("table[id=\"$weekdays[$days]_$directions[$index]\"]")
-                        db.lesson_add(day.select("p[id=\"group\"]").toString(), weekdays[days], day.select("p[id=\"time\"]").toString())
+                for (direction in directions) {
+                    for (days in 0..6) {
+                        val str = "table[id='" + weekdays[days] + "_" + direction + "']"
+                        val day: Elements = doc.select(str)
+                        db.lesson_add(day.select("p[id=\"group\"]").text(), weekdays[days], day.select("p[id=\"time\"]").text())
                     }
                 }
 

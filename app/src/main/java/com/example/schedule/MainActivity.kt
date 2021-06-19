@@ -96,6 +96,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val htmlParser = HtmlParser()
+        htmlParser.getHtmlFromWeb(dbHandler)
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
