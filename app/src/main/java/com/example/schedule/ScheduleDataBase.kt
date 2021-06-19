@@ -31,7 +31,6 @@ class ScheduleDataBase(context: Context) : SQLiteOpenHelper(context, "Schedule",
         values.put("class_group", group_title)
         values.put("direction", group_direction)
         val _success = db.insert("Directions", null, values)
-        db.close()
         return (Integer.parseInt("$_success") != -1)
     }
 
@@ -39,13 +38,14 @@ class ScheduleDataBase(context: Context) : SQLiteOpenHelper(context, "Schedule",
         val db = this.writableDatabase
         val newValues = ContentValues()
         newValues.put("class_group", group_title)
-        newValues.put("direction", weekday)
-        newValues.put("direction", time)
+        newValues.put("weekday", weekday)
+        newValues.put("time", time)
         val insert = db.insert(
             "Lessons",
             null,
             newValues
         )
+
     }
 
     fun get_group_list(): ArrayList<String> {
@@ -59,6 +59,7 @@ class ScheduleDataBase(context: Context) : SQLiteOpenHelper(context, "Schedule",
 
             } while (cursor.moveToNext())
         }
+
         return groups
     }
 
@@ -67,6 +68,7 @@ class ScheduleDataBase(context: Context) : SQLiteOpenHelper(context, "Schedule",
         var cursor: Cursor =
             db.rawQuery("select direction from Directions where class_group='" + group + "'", null)
         if (cursor.moveToFirst())
+
             return cursor.getString(cursor.getColumnIndex("direction"))
 
         return "not found"
@@ -92,7 +94,16 @@ class ScheduleDataBase(context: Context) : SQLiteOpenHelper(context, "Schedule",
                 lessons.add(lesson)
             } while (cursor.moveToNext())
         }
+
         return lessons
+    }
+
+    fun clear_directions_table() {
+        this.writableDatabase.execSQL("Delete from Directions")
+    }
+
+    fun clear_lessons_table() {
+        this.writableDatabase.execSQL("Delete from Lessons")
     }
 }
 
