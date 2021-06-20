@@ -96,6 +96,14 @@ class ScheduleDataBase(context: Context) : SQLiteOpenHelper(context, "Schedule",
         }
         return lessons
     }
+
+    fun clear_directions_table() {
+        this.writableDatabase.execSQL("Delete from Directions")
+    }
+
+    fun clear_lessons_table() {
+        this.writableDatabase.execSQL("Delete from Lessons")
+    }
 }
 
 
