@@ -1,18 +1,24 @@
 package com.example.schedule
 
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
+import androidx.annotation.RequiresApi
 import androidx.viewpager.widget.ViewPager
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
-    var objViewPager: ViewPager? = null
+    var objViewPager: ViewPager? = null;
     lateinit var cardAdapter : Adapter
     var models: List<Model>? = null
 
@@ -20,13 +26,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val dbHandler: ScheduleDataBase = ScheduleDataBase(this)
-
-        // For open second activity
-        val button = findViewById<Button>(R.id.main_button)
-        button.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
-            startActivity(intent)
-        }
 
         // For spinner
 
@@ -82,16 +81,46 @@ class MainActivity : AppCompatActivity() {
                 )
         )
 
+        objViewPager = findViewById(R.id.viewPager);
         cardAdapter = Adapter(models, this)
-
-        objViewPager = findViewById(R.id.viewPager)
         objViewPager?.adapter = cardAdapter
         objViewPager?.setPadding(130, 0, 130, 0)
 
+
+        // For open second activity
+        val button = findViewById<Button>(R.id.main_button)
+        button.setOnClickListener {
+            val selected = objViewPager?.let { it1 -> models?.get(it1.currentItem)?.getTitle() }
+            val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("Directions", selected)
+            startActivity(intent)
+        }
+
+        val htmlParser = HtmlParser()
+        htmlParser.getHtmlFromWeb(dbHandler)
     }
 
-
-
-
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun isOnline(context: Context): Boolean {
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (connectivityManager != null) {
+            val capabilities =
+                connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+            if (capabilities != null) {
+                if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_CELLULAR")
+                    return true
+                } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_WIFI")
+                    return true
+                } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
+                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_ETHERNET")
+                    return true
+                }
+            }
+        }
+        return false
+    }
 
 }

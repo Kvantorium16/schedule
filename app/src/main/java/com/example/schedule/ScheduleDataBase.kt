@@ -34,18 +34,18 @@ class ScheduleDataBase(context: Context) : SQLiteOpenHelper(context, "Schedule",
         return (Integer.parseInt("$_success") != -1)
     }
 
-    fun lesson_add(group_title: String, weekday: String, time: String) {
+    fun lesson_add(group_title: String, weekday: String, time: String) : Boolean {
         val db = this.writableDatabase
         val newValues = ContentValues()
         newValues.put("class_group", group_title)
         newValues.put("weekday", weekday)
         newValues.put("time", time)
-        val insert = db.insert(
+        val _success = db.insert(
             "Lessons",
             null,
             newValues
         )
-
+        return (Integer.parseInt("$_success") != -1)
     }
 
     fun get_group_list(): ArrayList<String> {

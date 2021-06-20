@@ -6,20 +6,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="412dp"
+        android:layout_height="279dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/lay3"
+        tools:srcCompat="@drawable/lay3" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="257dp"
         android:layout_height="79dp"
         android:layout_marginBottom="600dp"
         android:text="@string/geokvantum_subject"
-        android:textColor="#000000"
-        android:textSize="44sp"
+        android:textColor="#99AADF"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.739"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
+        app:layout_constraintVertical_bias="0.538" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -34,8 +44,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.4"
-        app:srcCompat="@drawable/geo"
-        tools:srcCompat="@drawable/geo" />
+        app:srcCompat="@drawable/geokvantum1"
+        tools:srcCompat="@drawable/geokvanticon" />
 
     <TextView
         android:id="@+id/textView2"
@@ -44,11 +54,12 @@
         android:layout_marginTop="26dp"
         android:justificationMode="inter_word"
         android:text="@string/geokvantum_text"
-        android:textColor="@color/black"
+        android:textColor="#AACBE1"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
