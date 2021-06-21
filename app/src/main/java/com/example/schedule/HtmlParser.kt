@@ -35,7 +35,7 @@ class HtmlParser{
                 while (i < num_directions){
                     groups = arrayListOf()
                     temp = tr!![i].select("p[id=\"group\"]")
-                    if (direction != null) {
+                    if (temp != null) {
                         for (group in temp){
                             groups.add(group.text())
                         }
