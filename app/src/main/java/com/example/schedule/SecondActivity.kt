@@ -40,8 +40,8 @@ class SecondActivity : AppCompatActivity() {
                 description.text = "Изучение физико-математических основ космонавтики, электротехники, радиотехники, электроники и фотоники, конструирование малых искусственных спутников Земли."
                 icon.setImageResource(R.drawable.kosmokvanticon)
             }
-            "Промышленная робототехника" -> {
-                direction.text = "Промышленная робототехника"
+            "Робоквантум" -> {
+                direction.text = "Робоквантум"
                 description.text = "Изучение передовых технологий в области электроники, мехатроники и программирования, конструирование и программирование роботов."
                 icon.setImageResource(R.drawable.robokvanticon)
             }
@@ -49,6 +49,26 @@ class SecondActivity : AppCompatActivity() {
                 direction.text = "Нейроквантум"
                 description.text = "Исследование механизмов работы человеческого мозга и разработка на их основе новых искуственных систем и человеко-машинных интерфейсов."
                 icon.setImageResource(R.drawable.neirokvanticon)
+            }
+            "3D-моделирование" -> {
+                direction.text = "3D-моделирование"
+                description.text = "Создание прототипов устройств, создание моделей, работа с 3D- графикой и анимация конструкторских решений."
+                icon.setImageResource(R.drawable.logo230)
+            }
+            "Прототипирование" -> {
+                direction.text = "Прототипирование"
+                description.text = "Создание прототипов устройств, создание моделей, работа с 3D- графикой и анимация конструкторских решений."
+                icon.setImageResource(R.drawable.logo230)
+            }
+            "VR/AR-квантум" -> {
+                direction.text = "VR/AR-квантум"
+                description.text = "Создание приложений виртуальной и дополненной реальности на игровой платформе. Работа с очками и шлемами дополненной и виртуальной реальности."
+                icon.setImageResource(R.drawable.it)
+            }
+            "Наноквантум" -> {
+                direction.text = "Наноквантум"
+                description.text = "Изучение современных методов и средств лазерной технологии, работа на лазерном оборудовании."
+                icon.setImageResource(R.drawable.laser)
             }
         }
         val timetable : TableLayout = findViewById(R.id.timetable)
