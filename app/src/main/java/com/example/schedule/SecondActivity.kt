@@ -40,7 +40,7 @@ class SecondActivity : AppCompatActivity() {
                 description.text = "Изучение физико-математических основ космонавтики, электротехники, радиотехники, электроники и фотоники, конструирование малых искусственных спутников Земли."
                 icon.setImageResource(R.drawable.kosmokvanticon)
             }
-            "Робоквантум" -> {
+            "Промышленная робототехника" -> {
                 direction.text = "Промышленная робототехника"
                 description.text = "Изучение передовых технологий в области электроники, мехатроники и программирования, конструирование и программирование роботов."
                 icon.setImageResource(R.drawable.robokvanticon)

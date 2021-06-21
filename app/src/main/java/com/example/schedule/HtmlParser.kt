@@ -34,8 +34,15 @@ class HtmlParser{
                 while (i < num_directions){
                     groups = tr!![i].select("p[id=\"group\"]")
                     if (direction != null) {
-                        for (group in groups){
-                            db.group_add(group.toString(), directions[i])
+                        var groupsText : ArrayList<String> = arrayListOf()
+                        for(group in groups) {
+                            groupsText.add(group.text())
+                        }
+                        if (groupsText.size > 0) {
+                            groupsText = groupsText.distinct() as ArrayList<String>
+                            for (groupText in groupsText) {
+                                db.group_add(groupText, directions[i])
+                            }
                         }
                     }
                     i += 1
