@@ -7,45 +7,56 @@ import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
 import java.util.*
 import com.example.schedule.ScheduleDataBase.*
+import org.jsoup.nodes.Element
+import kotlin.collections.ArrayList
 
 class HtmlParser{
 
     fun getHtmlFromWeb(db : ScheduleDataBase) {
-        val groups: ArrayList<String> = arrayListOf()
-        val directions: ArrayList<String> = arrayListOf()
         Thread{
             try {
                 val doc: Document = Jsoup.connect("https://jjpega.pythonanywhere.com/get").get()
-                val group: Elements = doc.select("p[id=\"group\"]")
-                for (index in group.indices) {
-                    groups.add(group[index].text())
-                }
-                groups.distinct()
+                db.clear_directions_table()
+                db.clear_lessons_table()
 
-                val direction: Elements = doc.select("td[id=\"direction\"]")
-                for (index in direction.indices) {
-                    directions.add(direction[index].text())
+                val direction: Elements? = doc.select("td[id=\"direction\"]")
+                var directions: ArrayList<String> = arrayListOf()
+                if (direction != null) {
+                    for (dir in direction){
+                        directions.add(dir.text())
+                    }
                 }
-                directions.distinct()
 
-                for (index in groups.indices) {
-                    db.group_add(groups[index], directions[index])
+                var num_directions: Int = directions.size
+                var i = 0
+                var groups: Elements?
+                var tr: Elements? = doc.select("tr[id=\"er\"]")
+                while (i < num_directions){
+                    groups = tr!![i].select("p[id=\"group\"]")
+                    if (direction != null) {
+                        for (group in groups){
+                            db.group_add(group.toString(), directions[i])
+                        }
+                    }
+                    i += 1
                 }
 
                 val weekdays: Array<String> = (arrayOf("Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"))
-
-                for (direction in directions) {
-                    for (days in 0..6) {
-                        val str = "table[id='" + weekdays[days] + "_" + direction + "']"
-                        val day: Elements = doc.select(str)
-                        db.lesson_add(day.select("p[id=\"group\"]").text(), weekdays[days], day.select("p[id=\"time\"]").text())
+                for (days in weekdays) {
+                    for (direction in directions) {
+                        i = 0
+                        val day: Elements = doc.select("table[id='" + days + "_" + direction + "']")
+                        val g: Int = day.select("p[id=\"group\"]").size
+                        while (i < g) {
+                            db.lesson_add(day.select("p[id=\"group\"]")[i].text(), days, day.select("p[id=\"time\"]")[i].text())
+                            i += 1
+                        }
                     }
                 }
 
             } catch (e: Exception) {
-
+                println(e)
             }
         }.start()
     }
 }
-
