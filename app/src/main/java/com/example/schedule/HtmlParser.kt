@@ -45,8 +45,7 @@ class HtmlParser{
                 for (days in weekdays) {
                     for (direction in directions) {
                         i = 0
-                        val str = "table[id='" + days + "_" + direction + "']"
-                        val day: Elements = doc.select(str)
+                        val day: Elements = doc.select("table[id='" + days + "_" + direction + "']")
                         val g: Int = day.select("p[id=\"group\"]").size
                         while (i < g) {
                             db.lesson_add(day.select("p[id=\"group\"]")[i].text(), days, day.select("p[id=\"time\"]")[i].text())
@@ -61,4 +60,3 @@ class HtmlParser{
         }.start()
     }
 }
-
