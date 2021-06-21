@@ -29,13 +29,19 @@ class HtmlParser{
 
                 var num_directions: Int = directions.size
                 var i = 0
-                var groups: Elements?
+                var groups: List<String> = arrayListOf()
+                var temp: Elements?
                 var tr: Elements? = doc.select("tr[id=\"er\"]")
                 while (i < num_directions){
-                    groups = tr!![i].select("p[id=\"group\"]")
+                    groups = arrayListOf()
+                    temp = tr!![i].select("p[id=\"group\"]")
                     if (direction != null) {
+                        for (group in temp){
+                            groups.add(group.text())
+                        }
+                        groups = groups.distinct()
                         for (group in groups){
-                            db.group_add(group.toString(), directions[i])
+                            db.group_add(group, directions[i])
                         }
                     }
                     i += 1
