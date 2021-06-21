@@ -36,13 +36,12 @@ class HtmlParser{
                     if (direction != null) {
                         var groupsText : ArrayList<String> = arrayListOf()
                         for(group in groups) {
-                            groupsText.add(group.text())
+                            var txt = group.text()
+                            if (!groupsText.contains(txt))
+                                groupsText.add(txt)
                         }
-                        if (groupsText.size > 0) {
-                            groupsText = groupsText.distinct() as ArrayList<String>
-                            for (groupText in groupsText) {
-                                db.group_add(groupText, directions[i])
-                            }
+                        for (groupText in groupsText) {
+                            db.group_add(groupText, directions[i])
                         }
                     }
                     i += 1
