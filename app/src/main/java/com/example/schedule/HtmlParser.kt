@@ -14,10 +14,10 @@ class HtmlParser{
 
     fun getHtmlFromWeb(db : ScheduleDataBase) {
         Thread{
-            db.clear_directions_table()
-            db.clear_lessons_table()
             try {
                 val doc: Document = Jsoup.connect("https://jjpega.pythonanywhere.com/get").get()
+                db.clear_directions_table()
+                db.clear_lessons_table()
 
                 val direction: Elements? = doc.select("td[id=\"direction\"]")
                 var directions: ArrayList<String> = arrayListOf()
@@ -29,16 +29,13 @@ class HtmlParser{
 
                 var num_directions: Int = directions.size
                 var i = 0
-                var group: String = ""
-                var groups: ArrayList<String>
+                var groups: Elements?
                 var tr: Elements? = doc.select("tr[id=\"er\"]")
                 while (i < num_directions){
-                    group = tr!![i].select("p[id=\"group\"]").text()
-                    if (group != "") {
-                        groups = group.split(" ") as ArrayList<String>
-                        groups = groups.distinct() as ArrayList<String>
-                        for (group in groups) {
-                            db.group_add(group, directions[i])
+                    groups = tr!![i].select("p[id=\"group\"]")
+                    if (direction != null) {
+                        for (group in groups){
+                            db.group_add(group.toString(), directions[i])
                         }
                     }
                     i += 1
