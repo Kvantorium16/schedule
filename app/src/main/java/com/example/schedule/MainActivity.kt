@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val dbHandler: ScheduleDataBase = ScheduleDataBase(this)
+        val dbHandler: ScheduleDataBase = ScheduleDataBase(applicationContext)
 
         // For spinner
 
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         (models as ArrayList<Model>).add(
                 Model(
                         R.drawable.robot,
-                        "Робоквантум",
+                        "Промышленная робототехника",
                         "Изучение передовых технологий в области электроники, мехатроники и программирования, конструирование и программирование роботов."
                 )
         )

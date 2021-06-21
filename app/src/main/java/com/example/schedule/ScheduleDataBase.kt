@@ -63,6 +63,19 @@ class ScheduleDataBase(context: Context) : SQLiteOpenHelper(context, "Schedule",
         }
         return groups
     }
+    fun get_group_list(direction : String): ArrayList<String> {
+        val db = this.readableDatabase
+        var cursor: Cursor = db.rawQuery("select class_group from Directions where direction='$direction'", null)
+        var groups: ArrayList<String> = arrayListOf()
+        if (cursor.moveToFirst()) {
+            do {
+                var group: String = cursor.getString(cursor.getColumnIndex("class_group"))
+                groups.add(group)
+
+            } while (cursor.moveToNext())
+        }
+        return groups
+    }
 
     fun get_direction_by_group(group: String): String {
         val db = this.readableDatabase

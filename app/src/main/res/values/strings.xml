@@ -33,5 +33,8 @@
         <item>204</item>
     </string-array>
     <item name="directions" type="id" />
+    <string name="group">Группа</string>
+    <string name="weekday">День</string>
+    <string name="time">Время</string>
 
 </resources>

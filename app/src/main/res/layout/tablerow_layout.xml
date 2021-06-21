@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/second_layout">
+
+    <TextView
+        android:id="@+id/lesson_group"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:text="123"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/lesson_weekday"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Воскресенье"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/lesson_time"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="12:00"
+        android:textSize="20sp" />
+</TableRow>
